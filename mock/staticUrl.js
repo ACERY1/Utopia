@@ -6,7 +6,10 @@
 
 const routeUrl = {
 	// 这里面放置路由路径 如 test: '/test'
-	testUrl:'/testUrl'
+	testUrl: {
+		mainPath:'/testUrl', // 提示：这个必须和key同名
+		about:'/about'
+	}
 };
 
 module.exports = routeUrl;

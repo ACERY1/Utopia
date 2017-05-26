@@ -5,21 +5,21 @@
 
 const express = require('express');
 const router = express.Router();
-const staticUrl =	require('../staticUrl');
+const staticUrl = require('../staticUrl');
 const staticData = require('../staticData');
+const commonMiddle = require('./commonMiddle');
 
-let fn = (req, res, next) => {
-	// fn是中间件
-	next();
-};
+// 挂载中间件
+router.use(commonMiddle.fn);
 
-router.use(fn); // 挂载中间件
-
-router.get(staticUrl.testUrl,(req,res)=>{
-	// 定义该路由下的响应
+// 配置路由以及相应数据
+router.get(staticUrl.testUrl.about, (req, res) => {
+	res.send(staticData.testData);
+	res.end();
 });
 
 
-
+// 导出该路由
+module.exports = router;
 
 
