@@ -5,6 +5,7 @@
 </template>
 
 <script>
+	import {test} from './service/getData'
 	export default {
 		name: "",
 		components: {},
@@ -13,7 +14,7 @@
 		},
 		computed: {},
 		created () {
-
+			test();
 		},
 		methods: {}
 	}

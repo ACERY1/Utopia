@@ -1,7 +1,8 @@
 module.exports = {
     "env": {
         "browser": true,
-        "es6": true
+        "es6": true,
+		"commonjs":true
     },
     "extends": "eslint:recommended",
     "parserOptions": {
@@ -9,7 +10,7 @@ module.exports = {
     },
     "rules": {
         "indent": [
-            "error",
+            "warn",
             "tab"
         ],
         "linebreak-style": [
@@ -17,7 +18,7 @@ module.exports = {
             "unix"
         ],
         "quotes": [
-            "error",
+            "off",
             "single"
         ],
         "semi": [
@@ -26,6 +27,7 @@ module.exports = {
         ],
 		"no-unused-vars": "off",
 		"no-console": "off",
-		"eqeqeq":"warn"
+		"eqeqeq":"warn",
+		"no-undef":"warn",
     }
 };
