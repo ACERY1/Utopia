@@ -19,10 +19,12 @@ const PORT = 3000;
 
 let app = express();
 
+// 挂载路由
 app.use(staticUrl.testUrl.mainPath,test);
 
 
-let server = app.listen(PORT, () => {
+// 配置监听端口
+app.listen(PORT, () => {
 	console.log('now listen at %d', PORT);
 });
 

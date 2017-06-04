@@ -4,7 +4,7 @@
 import axios from 'axios';
 
 let test = () => {
-	axios.get('http://localhost:3000/square/1', {
+	axios.get('http://localhost:3000/testUrl/about', {
 		hello: 'hello',
 	});
 };
