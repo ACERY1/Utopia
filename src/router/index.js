@@ -1,19 +1,24 @@
-import Vue from 'vue';
-import Router from 'vue-router';
-import Hello from '@/components/Hello';
-import TEST from '../TEST.vue';
+import App from '../App';
 
-Vue.use(Router);
+const test = r => require.ensure([], () => r(require('../TEST.vue')), 'test');
+const hello = r => require.ensure([], () => r(require('../components/Hello.vue')), 'hello');
 
 
-
-export default new Router({
-	mode: 'history', // 提示： 防止URL里面带上#号
-	routes: [
+export default[{
+	path: '/',
+	component: App,
+	children: [
 		{
-			path: '/',
-			name: 'Hello',
-			component: TEST
-		}
+			path: '',
+			redirect: '/home'
+		},
+		{
+			path: '/home',
+			component: hello
+		},
+		{
+			path: '/test',
+			component: test
+		},
 	]
-});
+}];

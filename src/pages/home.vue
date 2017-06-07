@@ -1,6 +1,6 @@
 <template>
 	<div class="">
-		<h1>this is test page</h1>
+
 	</div>
 </template>
 
@@ -13,14 +13,11 @@
 		},
 		computed: {},
 		created () {
+
 		},
-		mounted () {},
 		methods: {}
 	}
 </script>
 
-<style lang="scss" rel="stylesheet/scss" scoped>
-	h1{
-		text-align: center;
-	}
+<style lang="scss" rel="stylesheet/scss">
 </style>
