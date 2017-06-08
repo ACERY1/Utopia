@@ -28,7 +28,8 @@
 			},
 			activeIndex: {
 				default: 'null'
-			}
+			},
+
 		},
 		computed: {
 			display () {
@@ -42,6 +43,7 @@
 
 		},
 		methods: {
+			// 这个地方以后改写路由跳转
 			handleSelect(key, keyPath) {
 				console.log(key, keyPath);
 			}

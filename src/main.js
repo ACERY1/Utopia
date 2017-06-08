@@ -16,7 +16,12 @@ Vue.use(ElementUI); // 注册使用elementUI
 
 Vue.use(VueRouter); // 注册使用Router
 
-Vue.use(VueLazyLoad); // 使用图偏懒加载
+Vue.use(VueLazyLoad,{
+	error: require('./assets/gifs/404.gif'),
+	loading: require('./assets/gifs/loading.gif'),
+	attempt: 1
+}); // 使用pic懒加载
+
 
 const router = new VueRouter({
 	mode:'history',
