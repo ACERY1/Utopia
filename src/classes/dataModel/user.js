@@ -38,4 +38,11 @@ class admin extends normalUser {
 	}
 }
 
-export {normalUser, vipUser, admin};
+class author extends admin{
+	constructor(userName, userIcon, userId,intro,links) {
+		super(userName, userIcon, userId);
+		this.intro = intro;
+		this.links = links;
+	}
+}
+export {normalUser, vipUser, admin,author};
