@@ -1,22 +1,10 @@
 <template>
-	<div class="">
-		<!--<h1>this is test page</h1>-->
+	<div class="header-box">
 		<el-row>
 
-			<el-menu :default-active="activeIndex2" class="header" mode="horizontal" @select="handleSelect">
-				<el-col :span="8">
-					<el-menu-item index="1"></el-menu-item>
-				</el-col>
-				<el-col :span="8">
-					<el-submenu index="2">
-						<template slot="title">我的工作台</template>
-						<el-menu-item index="2-1">选项1</el-menu-item>
-						<el-menu-item index="2-2">选项2</el-menu-item>
-						<el-menu-item index="2-3">选项3</el-menu-item>
-					</el-submenu>
-				</el-col>
-				<el-col :span="8">
-					<el-menu-item index="3">订单管理</el-menu-item>
+			<el-menu :default-active="activeIndex" class="header" mode="horizontal" @select="handleSelect">
+				<el-col :span="display" v-for="link of links" :key="link" class="header-item">
+					<el-menu-item :index="link.link" class="header-button">{{link.name}}</el-menu-item>
 				</el-col>
 			</el-menu>
 
@@ -25,17 +13,35 @@
 </template>
 
 <script>
+	import {header} from './classes/viewModel/headerLink'
 	export default {
 		name: "",
 		components: {},
 		data () {
 			return {
-				activeIndex: '0',
-				activeIndex2: '0'
+				activeIndex: 'homepage',
 			}
 		},
-		computed: {},
+		props: {
+			links: {
+				default: new header([
+					{name: 'HOME', link: 'homepage'},
+					{name: 'CATEGORY', link: 'categories'},
+					{name: 'IDEAS', link: 'ideas'},
+					{name: 'CONTACT', link: 'contact'}
+				]).links
+			},
+			activeIndex: {
+				default: 'homepage'
+			}
+		},
+		computed: {
+			display () {
+				return parseInt(24 / this.links.length)
+			}
+		},
 		created () {
+
 		},
 		mounted () {
 
@@ -51,7 +57,46 @@
 <style lang="scss" rel="stylesheet/scss" scoped>
 	@import "common/style/mixin";
 
+	.el-menu-item.is-active {
+		color: #42b983;
+		//	@include fullBorder(1px,#42b983); button加边框
+		border-bottom: 5px solid #42b983;
+
+	}
+
+	.header-box {
+		position: fixed;
+		width: 100%;
+		box-shadow: lighten($fontClr, 40%) 1px 5px 5px;
+	}
+
 	.header {
+		height: 5rem;
+		width: 100%;
 		background: #ffffff;
+		&-item {
+			margin-top: .4rem;
+			margin-bottom: .4rem;
+			height: 4rem;
+			/*margin: 20px;*/
+		}
+		&-button {
+			@include wh(80%, 100%);
+			@include allMidBox();
+			font-size: 1.4rem;
+			font-weight: 200;
+			margin-left: 10%;
+		}
+		&-button:hover {
+			background-color: transparent;
+			border-bottom: 5px solid #42b983;
+			transition-property: border-color, background-color, color;
+			transition-duration: 0.3s, 0.3s, 0.3s;
+			transition-timing-function: initial;
+			transition-delay: initial;
+		}
+		&-buttonHover {
+			//@include fullBorder(1px,lighten($fontClr,10%))
+		}
 	}
 </style>
