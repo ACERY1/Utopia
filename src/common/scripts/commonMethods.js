@@ -5,9 +5,9 @@
 /**
  *
  * @param datetime
- *  		毫秒数
+ *        毫秒数
  * @returns {string}
- * 			返回示例："2017-06-09"
+ *            返回示例："2017-06-09"
  */
 let getTime = (datetime) => {
 	let year = datetime.getFullYear();
@@ -22,5 +22,20 @@ let getTime = (datetime) => {
 	return `${year}-${month}-${date}`;
 };
 
-
-export {getTime};
+let randomColor = () => {
+	let _base = 255;
+	let _r = 0;
+	let _g = 0;
+	let _b = 0;
+	while (Math.abs(_r - _g) < 30 || Math.abs(_r - _b) < 30 || Math.abs(_g - _b) < 30 || _g>180||_b>180 ||_r>180){
+		_r = parseInt(Math.random() * _base);
+		_g = parseInt(Math.random() * _base);
+		_b = parseInt(Math.random() * _base);
+	}
+	return {
+		r:_r,
+		g:_g,
+		b:_b
+	};
+};
+export {getTime,randomColor};
