@@ -5,6 +5,7 @@ import ElementUI from 'element-ui'; // 导入elementUI
 import 'element-ui/lib/theme-default/index.css';
 import FastClick from 'fastclick';
 import VueLazyLoad from 'vue-lazyload';
+import './assets/css/iconfont.css'; // 使用icon-font
 
 if ('addEventListener' in document) {
 	document.addEventListener('DOMContentLoaded', function() {
@@ -31,7 +32,6 @@ const router = new VueRouter({
 
 Vue.config.productionTip = false;
 
-/* eslint-disable no-new */
 new Vue({
 	router,
 }).$mount('#app');
