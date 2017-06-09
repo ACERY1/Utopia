@@ -15,9 +15,25 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-qq:before { content: "\e616"; }
+
+.icon-icon1:before { content: "\e604"; }
+
+.icon-github:before { content: "\e69f"; }
+
 .icon-icon:before { content: "\e602"; }
 
+.icon-touxiang:before { content: "\e637"; }
+
+.icon-touxiang1:before { content: "\e600"; }
+
+.icon-yonghutouxiang:before { content: "\e774"; }
+
+.icon-yonghutouxiang1:before { content: "\e60b"; }
+
 .icon-zhaopian:before { content: "\e603"; }
+
+.icon-touxiang2:before { content: "\e6f6"; }
 
 .icon-fabu:before { content: "\e60a"; }
 

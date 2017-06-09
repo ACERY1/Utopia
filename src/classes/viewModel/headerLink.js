@@ -1,5 +1,6 @@
 /**
  * headerLink class 顶部栏的链接
+ * 暂时没用
  */
 
 class header {
