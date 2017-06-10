@@ -50,12 +50,12 @@
 			return {
 				iconUrl: require('../../assets/imgs/Browser2_green.png'),
 				myTitle: 'write less do more',
-				links: [
-					{name: 'HOME', link: 'homepage'},
-					{name: 'CATEGORY', link: 'categories'},
-					{name: 'IDEAS', link: 'ideas'},
-					{name: 'CONTACT', link: 'contact'}
-				],
+//				links: [
+//					{name: 'HOME', link: 'homepage'},
+//					{name: 'CATEGORY', link: 'categories'},
+//					{name: 'IDEAS', link: 'ideas'},
+//					{name: 'CONTACT', link: 'contact'}
+//				],
 				input2: '',
 			}
 		},

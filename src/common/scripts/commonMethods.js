@@ -7,7 +7,7 @@
  * @param datetime
  *        毫秒数
  * @returns {string}
- *            返回示例："2017-06-09"
+ * 返回示例："2017-06-09"
  */
 let getTime = (datetime) => {
 	let year = datetime.getFullYear();
