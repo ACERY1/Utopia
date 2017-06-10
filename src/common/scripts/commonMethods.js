@@ -22,6 +22,10 @@ let getTime = (datetime) => {
 	return `${year}-${month}-${date}`;
 };
 
+/**
+ *
+ * @returns {{r: number, g: number, b: number}}
+ */
 let randomColor = () => {
 	let _base = 255;
 	let _r = 0;
@@ -38,4 +42,5 @@ let randomColor = () => {
 		b:_b
 	};
 };
+
 export {getTime,randomColor};

@@ -1,27 +1,27 @@
 $fontClr: #666666;
-$green:#42b983;
+$green: #42b983;
 $bgClr: #F2F2F2;
-$white:#fff;
-$placeHolder:#cccccc;
-$userBg:#2F3137;
-$userHolder:#5B5F6C;
+$white: #fff;
+$placeHolder: #cccccc;
+$userBg: #2F3137;
+$userHolder: #5B5F6C;
 
 // 水平居中盒子
-@mixin horMidBox{
+@mixin horMidBox {
 	display: flex;
 	flex-flow: nowrap column;
 	justify-content: center;
 }
 
 // 垂直居中盒子
-@mixin verMidBox{
+@mixin verMidBox {
 	display: flex;
 	flex-flow: nowrap column;
 	align-items: center;
 }
 
 // 水平垂直居中盒子
-@mixin allMidBox{
+@mixin allMidBox {
 	display: flex;
 	flex-flow: nowrap column;
 	justify-content: center;
@@ -45,7 +45,7 @@ $userHolder:#5B5F6C;
 }
 
 // 宽高
-@mixin wh($width, $height){
+@mixin wh($width, $height) {
 	width: $width;
 	height: $height;
 }
@@ -56,12 +56,36 @@ $userHolder:#5B5F6C;
 }
 
 // 字体大小，颜色
-@mixin fontSizeColor($size, $color){
+@mixin fontSizeColor($size, $color) {
 	font-size: $size;
 	color: $color;
 }
 
 // 全边框
-@mixin fullBorder($px,$color){
+@mixin fullBorder($px,$color) {
 	border: $px solid $color;
+}
+
+// 图片镜头动画
+@mixin scaleAnimation() {
+	-webkit-animation:picScale 1s ease-out backwards, picScale 15s ease-in-out infinite alternate;
+	animation:picScale 1s ease-out backwards, picScale 15s ease-in-out infinite alternate
+}
+
+@keyframes picScale {
+	0% {
+		-webkit-transform: scale(1.01);
+		-moz-transform: scale(1.01);
+		-ms-transform: scale(1.01);
+		-o-transform: scale(1.01);
+		transform: scale(1.01);
+	}
+	100% {
+		-webkit-transform: scale(1.15);
+		-moz-transform: scale(1.15);
+		-ms-transform: scale(1.15);
+		-o-transform: scale(1.15);
+		transform: scale(1.15);
+		opacity: .72;
+	}
 }
