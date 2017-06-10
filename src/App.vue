@@ -23,7 +23,7 @@
 					{name: 'HOME', link: 'homepage'},
 					{name: 'CATEGORY', link: 'categories'},
 					{name: 'IDEAS', link: 'ideas'},
-					{name: 'CONTACT', link: 'contact'}
+					{name: 'ADMIN', link: 'contact'}
 				]
 			}
 		},

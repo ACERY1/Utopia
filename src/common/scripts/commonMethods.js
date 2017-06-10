@@ -31,16 +31,33 @@ let randomColor = () => {
 	let _r = 0;
 	let _g = 0;
 	let _b = 0;
-	while (Math.abs(_r - _g) < 30 || Math.abs(_r - _b) < 30 || Math.abs(_g - _b) < 30 || _g>180||_b>180 ||_r>180){
+	while (Math.abs(_r - _g) < 30 || Math.abs(_r - _b) < 30 || Math.abs(_g - _b) < 30 || _g > 180 || _b > 180 || _r > 180) {
 		_r = parseInt(Math.random() * _base);
 		_g = parseInt(Math.random() * _base);
 		_b = parseInt(Math.random() * _base);
 	}
 	return {
-		r:_r,
-		g:_g,
-		b:_b
+		r: _r,
+		g: _g,
+		b: _b
 	};
 };
 
-export {getTime,randomColor};
+/**
+ *
+ * @returns {number}
+ * 1/2/3
+ */
+let randomNum = () => {
+	let _r = Math.random() * 10;
+	if (_r > 0 && _r <= 3.3) {
+		return 1;
+	}
+	else if (_r > 3.3 && _r <= 6.6) {
+		return 2;
+	} else {
+		return 3;
+	}
+};
+
+export {getTime, randomColor,randomNum};

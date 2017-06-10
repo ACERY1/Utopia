@@ -7,6 +7,7 @@
 					<div class="homeCard-txt-cont" v-html="hCont">
 						{{hCont}}
 					</div>
+					<el-button type="primary" class="top-button-green">阅读更多</el-button>
 				</div>
 			</el-col>
 			<el-col :span="8">
@@ -27,6 +28,7 @@
 					<div class="homeCard-txt-cont" v-html="hCont">
 						{{hCont}}
 					</div>
+					<el-button type="primary" class="top-button-green" style="margin-left: 60%">阅读更多</el-button>
 				</div>
 			</el-col>
 		</el-row>
@@ -40,7 +42,7 @@
 					{{hCont}}
 				</div>
 				<div class="top-button">
-				<el-button type="primary" class="top-button-green" >阅读更多</el-button>
+					<el-button type="primary" class="top-button-green">阅读更多</el-button>
 				</div>
 			</div>
 		</el-row>
@@ -95,20 +97,20 @@
 			height: 50%;
 			width: 100%;
 			overflow: hidden;
-			img{
+			img {
 				margin-top: -20%;
 				width: 100%;
 			}
 		}
 		&-title {
-			top:0;
+			top: 0;
 			height: 50%;
 			width: 100%;
 			@include allMidBox();
 			position: absolute;
 			margin-bottom: 1rem;
-			@include fontSizeColor(4rem,lighten( $fontClr,80%));
-			background: rgba(26,26,26,.4);
+			@include fontSizeColor(4rem, lighten($fontClr, 80%));
+			background: rgba(26, 26, 26, .4);
 			display: flex;
 			font-weight: 300;
 		}
@@ -121,11 +123,12 @@
 			height: 8rem;
 			overflow: hidden;
 		}
-		&-button{
+		&-button {
 			margin-top: 1rem;
 			@include allMidBox();
-			&-green{
+			&-green {
 				background-color: $green;
+				border: none;
 			}
 		}
 	}
@@ -160,7 +163,7 @@
 				margin-right: 10%;
 				@include fontSizeColor(1.3rem, darken($fontClr, 30%));
 				font-weight: 300;
-				height: 18rem;
+				height: 15rem;
 			}
 		}
 	}

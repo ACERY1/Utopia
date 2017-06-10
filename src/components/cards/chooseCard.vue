@@ -113,6 +113,8 @@
 	 */
 	.odd{
 		margin-top: 40%;
+		margin-bottom: 20%;
+
 		@include fontSizeColor(2.4rem,$fontClr);
 		font-weight: 300;
 	}
@@ -120,10 +122,10 @@
 	偶数是图片
 	 */
 	.even{
+		cursor: pointer;
 		overflow: hidden;
 		img{
 			@include scaleAnimation();
-			height: 100%;
 			width: 100%;
 		}
 		background-color: $placeHolder;
