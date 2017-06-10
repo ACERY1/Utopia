@@ -65,7 +65,8 @@
 		position: fixed;
 		z-index: 999;
 		width: 100%;
-		box-shadow: lighten($fontClr, 40%) 1px 5px 5px;
+		opacity: .9;
+		//box-shadow: lighten($fontClr, 40%) 1px 5px 5px;
 	}
 
 	.header {

@@ -15,6 +15,7 @@
 				<user-card></user-card>
 			</el-col>
 		</el-row>
+		<my-footer></my-footer>
 	</div>
 	</div>
 </template>
@@ -26,6 +27,7 @@
 	import userCard from './components/cards/userCard.vue'
 	import mBanner from './components/swipers/banner.vue'
 	import smBanner from './components/swipers/smallBanner.vue'
+	import myFooter from './components/bars/footer.vue'
 	export default {
 		name: "",
 		components: {
@@ -34,7 +36,8 @@
 			userCard,
 			mBanner,
 			smBanner,
-			hCard
+			hCard,
+			myFooter
 		},
 		data () {
 			return {}

@@ -58,7 +58,7 @@
 		@include fontSizeColor(1rem,lighten($fontClr,30%))
 	}
 	.myFooter {
-		height: 16rem;
+		height: 14rem;
 		@include allMidBox();
 		background-color: #ffffff;
 		&-main {
