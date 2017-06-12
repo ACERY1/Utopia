@@ -48,7 +48,7 @@
 		},
 		data () {
 			return {
-				iconUrl: require('../../assets/imgs/Browser2_green.png'),
+				iconUrl: require('../../assets/imgs/logos/Browser2_green.png'),
 				myTitle: 'write less do more',
 //				links: [
 //					{name: 'HOME', link: 'homepage'},

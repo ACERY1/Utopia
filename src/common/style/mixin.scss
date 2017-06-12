@@ -66,6 +66,7 @@ $userHolder: #5B5F6C;
 	border: $px solid $color;
 }
 
+
 // 图片镜头动画
 @mixin scaleAnimation() {
 	-webkit-animation:picScale 1s ease-out backwards, picScale 15s ease-in-out infinite alternate;
