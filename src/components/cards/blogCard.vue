@@ -19,13 +19,29 @@
 			</div>
 
 		</el-card>
-		<el-card :body-style="{ padding: '0px'}" v-if="type === 'bg' " >
+		<el-card :body-style="{ padding: '0px'}" v-if="type === 'bg' "  class="card2">
 			<div class="bgCard" :style="{background: 'url('+picUrl+')'}">
 				<div class="bgCard-main">
 					<div class="bgCard-main-title">{{bTitle}}</div>
 					<div class="bgCard-main-cont">{{bIntro}}</div>
 					<div class="bgCard-main-time">{{bTime}}</div>
-					<el-button type="primary" size="large" class="bgCard-main-btn" >more</el-button>
+					<el-button type="primary" size="large" class="bgCard-main-btn" >MORE</el-button>
+				</div>
+			</div>
+		</el-card >
+		<el-card :body-style="{ padding: '0px'}" v-if="type === 'big'" class="card3">
+			<div class="bigCard">
+				<div class="bigCard-img">
+					<img v-lazy="picUrl" alt="">
+				</div>
+				<div class="bigCard-title">
+					{{bTitle}}
+				</div>
+				<div class="bigCard-time">
+					{{bTime}}
+				</div>
+				<div class="bigCard-btnBox">
+					<el-button class="bigCard-btnBox-btn" type="primary" size="large">MORE</el-button>
 				</div>
 			</div>
 		</el-card>
@@ -48,14 +64,14 @@
 				default: "es6从入门到放弃"
 			},
 			bIntro: {
-				default: 'ECMAscript很难啊，学不动啊,type Script很难啊，去你妈的强类型，var作用域很坑啊用let啊 const是es7的啊'
+				default: 'ECMAscript很难啊，学不动啊,typeScript很难啊，去你妈的强类型，var作用域很坑啊用let啊 const是es7的啊'
 			},
 			bTime: {
 				default: getTime(new Date())
 			},
 			type: {
 				// top 图片在上方 // bg 图片作为背景 // big 图片占3/4 只留时间和title
-				default: 'bg'
+				default: 'big'
 			}
 
 		},
@@ -173,7 +189,43 @@
 		}
 	}
 
-	.card:hover {
+	.bigCard{
+		color: $fontClr;
+		width: 100%;
+		height: 28rem;
+		&-img{
+			@include wh(100%,18rem);
+			background-color: #2F3137;
+			overflow: hidden;
+			img{
+				@include wh(100%,150%);
+			}
+		}
+		&-title{
+			@include allMidBox();
+			@include wh(100%,4rem);
+			font-size: 1.2rem;
+		}
+		&-time{
+			@include fontSizeColor(.8rem,lighten($fontClr,20%));
+			@include allMidBox();
+			@include wh(100%,2rem);
+		}
+		&-btnBox{
+			@include allMidBox();
+			@include wh(100%,4rem);
+			&-btn{
+				@include allMidBox();
+				@include wh(4.8rem,2rem);
+				@include fontSizeColor(1.2rem,$green);
+				border: $green 1px solid;
+				background-color: #ffffff;
+				font-size: .8rem;
+			}
+		}
+	}
+
+	.card:hover,.card2:hover,.card3:hover {
 		transform: translateY(-2%);
 		box-shadow: 1px 4px 10px 2px #CCCCCC;
 		-webkit-box-shadow: 1px 4px 10px 2px #CCCCCC;
