@@ -1,7 +1,8 @@
 import App from '../App';
 
 
-const localTest = r => require.ensure([], () => r(require('../components/cards/newsCard.vue')), 'localTest');
+// localTest
+const localTest = r => require.ensure([], () => r(require('../components/cards/mainCard.vue')), 'localTest');
 
 const test = r => require.ensure([], () => r(require('../TEST.vue')), 'test'); // 本地测试
 const home = r => require.ensure([], () => r(require('../pages/home.vue')), 'home');

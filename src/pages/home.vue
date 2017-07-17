@@ -10,7 +10,7 @@
 		<el-row type="flex" justify="center">
 			<el-col :lg="16" :sm="24" :xs="24" :md="24">
 				<el-col :lg="8" :sm="24" :xs="24" :md="24" v-for="j,index2 in 3" :key="j">
-					<b-card class="home-padding blog-card" :type="'top'"></b-card>
+					<b-card class="home-padding blog-card" :type="'bg'"></b-card>
 				</el-col>
 			</el-col>
 		</el-row>
