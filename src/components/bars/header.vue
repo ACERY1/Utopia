@@ -2,7 +2,7 @@
 	<div class="header-box">
 		<el-row>
 
-			<el-menu :default-active="activeIndex" class="header" mode="horizontal" @select="handleSelect">
+			<el-menu :default-active="activeIndex" class="header" mode="horizontal" :router="true">
 				<el-col :span="display" v-for="link of links" :key="link" class="header-item">
 					<el-menu-item :index="link.link" class="header-button">{{link.name}}</el-menu-item>
 				</el-col>

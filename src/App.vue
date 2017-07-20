@@ -1,10 +1,10 @@
 <template>
 	<div class="body">
-		<!--<my-header :links="links" :activeIndex="links[0].link" ></my-header>-->
+		<my-header :links="links" :activeIndex="links[0].link" ></my-header>
 		<transition name="router-fade" mode="out-in">
 			<router-view class="App-padding"></router-view>
 		</transition>
-		<!--<my-footer></my-footer>-->
+		<my-footer></my-footer>
 	</div>
 </template>
 
@@ -20,10 +20,10 @@
 		data () {
 			return {
 				links:[
-					{name: 'HOME', link: 'homepage'},
+					{name: 'HOME', link: 'home'},
 					{name: 'CATEGORY', link: 'categories'},
-					{name: 'IDEAS', link: 'ideas'},
-					{name: 'ADMIN', link: 'contact'}
+					{name: 'IDEAS', link: 'test'},
+					{name: 'ADMIN', link: 'local'}
 				]
 			}
 		},
