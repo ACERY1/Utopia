@@ -1,7 +1,8 @@
+<!--TODO:这是一个足迹卡片-->
 <template>
 	<div class="footDialog">
 		<el-row>
-			<el-col :span="9">
+			<el-col :span="8">
 				<div class="footDialog-banner">
 					<el-row class="head">
 						<el-col :span="16">
@@ -13,25 +14,26 @@
 					</el-row>
 					<el-row class="mainTitle">
 						<el-row class="username">
-							<span>{{userName}}</span>
+							<span>{{info.authorName}}</span>
 						</el-row>
 						<el-row>
 							<i class="el-icon-minus icon dvd"></i>
 						</el-row>
 						<span class="dlgTitle">
-							{{title1}}
+							{{info.mainTitle}}
 						</span>
 					</el-row>
 				</div>
 			</el-col>
-			<el-col :span="15">
+			<el-col :span="16">
 				<div class="footDialog-main">
 					<div class="footDialog-main-pic">
-						<img v-lazy="picUrl">
+						<img v-lazy="info.picUrl">
 					</div>
 					<div class="footDialog-main-cont">
-						<div class="title">{{title2}}</div>
-						<div class="mainCont">{{cont}}</div>
+						<div class="title">{{info.postTitle}}</div>
+						<div class="mainCont">{{info.postCont}}</div>
+						<div class="time">{{pubDate.year}}-{{pubDate.month}}-{{pubDate.date}}</div>
 					</div>
 				</div>
 			</el-col>
@@ -40,20 +42,39 @@
 </template>
 
 <script>
+	import {parseTime} from '../../common/scripts/utils'
 	export default {
 		name: "",
 		components: {},
 		data () {
-			return {
-				userName: "Acery",
-				title1: "Hello world this is some test words",
-				picUrl:'http://img.hb.aicdn.com/f688414f4798ce419f24859693d8e4736dc256c13bcc0-otRRlS_fw658',
-				title2: "TEST WORDS",
-				cont:"你以为我会把你的爱情和车子、首饰相比吗？你以为我会把虚荣当作幸福吗？一个人心中没有爱情的时候可以满足于虚荣，但一旦有了爱情，虚荣就变得庸俗不堪了。——《茶花女》你以为我会把你的爱情和车子、首饰相比吗？你以为我会把虚荣当作幸福吗？一个人心中没有爱情的时候可以满足于虚荣，但一旦有了爱情，虚荣就变得庸俗不堪了。——《茶花女》你以为我会把你的爱情和车子、首饰相比吗？你以为我会把虚荣当作幸福吗？一个人心中没有爱情的时候可以满足于虚荣，但一旦有了爱情，虚荣就变得庸俗不堪了。——《茶花女》"
+			return {}
+		},
+		props: {
+			info: {
+				type: Object,
+				default: () => {
+					return {
+						authorName: "ACERY",
+						mainTitle: "Hello world this is some test words",
+						postTitle: 'TEST WORDS',
+						postCont: "你以为我会把你的爱情和车子、首饰相比吗？你以为我会把虚荣当作幸福吗？一个人心中没有爱情的时候可以满足于虚荣，但一旦有了爱情，虚荣就变得庸俗不堪了。——《茶花女》你以为我会把你的爱情和车子、首饰相比吗？你以为我会把虚荣当作幸福吗？一个人心中没有爱情的时候可以满足于虚荣，但一旦有了爱情，虚荣就变得庸俗不堪了。——《茶花女》你以为我会把你的爱情和车子、首饰相比吗？你以为我会把虚荣当作幸福吗？一个人心中没有爱情的时候可以满足于虚荣，但一旦有了爱情，虚荣就变得庸俗不堪了。——《茶花女》",
+						picUrl: 'http://img.hb.aicdn.com/f688414f4798ce419f24859693d8e4736dc256c13bcc0-otRRlS_fw658',
+						pubTime: 1502193579762
+					}
+				}
 			}
 		},
-		props: {},
-		computed: {},
+		computed: {
+			pubDate (){
+				let a = parseTime(this.info.pubTime)
+
+				return {
+					year: a.year,
+					month: a.month,
+					date: a.date
+				}
+			}
+		},
 		created () {
 		},
 		mounted () {
@@ -65,28 +86,31 @@
 <style lang="scss" rel="stylesheet/scss" scoped>
 	@import "../../common/style/mixin";
 
-	$height: 34rem;
+	$height: 38rem;
 	.footDialog {
+		/*TODO：固定了高度*/
+		/*width: 68rem;*/
+		overflow: hidden;
 		height: $height;
-		background: #42b983;
+		background: $white;
 		&-banner {
 			box-sizing: border-box;
 			padding: 1rem;
 			height: $height;
 			width: 100%;
-			background: #2F3137;
+			background: $userHolder;
 			.mainTitle {
 				color: $white;
 				.username {
-					color: $green;
+					color: $orange;
 				}
 				.dvd {
 					margin-bottom: 1rem;
-					color: $green;
+					color: $orange;
 				}
 			}
 			.head {
-				margin-bottom: $height/1.8;
+				margin-bottom: $height/1.5;
 			}
 			.icon {
 				font-size: 1.4rem;
@@ -104,21 +128,34 @@
 			@include allMidBox();
 			&-pic {
 				width: 100%;
-				height: $height/3;
-				background: #5B5F6C;
-				img{
+				height: $height/5 *2;
+				background: $userBg;
+				overflow: hidden;
+				img {
+					height: 300%;
 					width: 100%;
 				}
 			}
 			&-cont {
+				overflow: hidden;
+				color: $fontClr;
 				padding: 1.4rem;
 				box-sizing: border-box;
 				width: 100%;
-				background: #3b3b3b;
-				height: $height/3*2;
+				background: rgba(255, 255, 255, .2);
+				height: $height/5*3;
 				.title {
+					margin-bottom: 1.2rem;
+					font-size: 2rem;
 				}
 				.mainCont {
+					letter-spacing: 2px;
+					line-height: 1.8rem;
+					font-size: 1.1rem;
+				}
+				.time{
+					margin-top: 20px;
+					float: right;
 				}
 			}
 		}

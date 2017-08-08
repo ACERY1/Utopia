@@ -15,7 +15,16 @@
 				<user-card></user-card>
 			</el-col>
 		</el-row>
+		<news-card></news-card>
+		<choose-card></choose-card>
+		<el-row type="flex" justify="center">
+			<el-col :span="12">
+				<ft-dialog></ft-dialog>
+			</el-col>
+		</el-row>
+
 		<my-footer></my-footer>
+
 	</div>
 	</div>
 </template>
@@ -23,11 +32,14 @@
 <script>
 	import bCard from './components/cards/blogCard.vue'
 	import hCard from './components/cards/homeCard.vue'
-	import myHeader from './components/bars/header.vue'
 	import userCard from './components/cards/userCard.vue'
+	import chooseCard from './components/cards/chooseCard.vue'
+	import myHeader from './components/bars/header.vue'
+	import newsCard from './components/cards/newsCard.vue'
 	import mBanner from './components/swipers/banner.vue'
 	import smBanner from './components/swipers/smallBanner.vue'
 	import myFooter from './components/bars/footer.vue'
+	import ftDialog from './components/dialogs/footDialog.vue'
 	export default {
 		name: "",
 		components: {
@@ -37,7 +49,10 @@
 			mBanner,
 			smBanner,
 			hCard,
-			myFooter
+			myFooter,
+			ftDialog,
+			chooseCard,
+			newsCard
 		},
 		data () {
 			return {}

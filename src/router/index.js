@@ -9,7 +9,7 @@ const home = r => require.ensure([], () => r(require('../pages/home.vue')), 'hom
 const hello = r => require.ensure([], () => r(require('../components/Hello.vue')), 'hello');
 
 /*用作开发*/
-const dev = r => require.ensure([], () => r(require('../components/dialogs/footDialog.vue')), 'dev');
+const dev = r => require.ensure([], () => r(require('../components/dialogs/newsDialog.vue')), 'dev');
 
 
 export default[
