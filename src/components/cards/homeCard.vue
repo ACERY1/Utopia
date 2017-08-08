@@ -158,7 +158,8 @@
 				font-weight: 300;
 			}
 			&-cont {
-				overflow: scroll;
+				/*overflow-y: scroll;*/
+				overflow: hidden;
 				width: 90%;
 				margin-right: 10%;
 				@include fontSizeColor(1.3rem, darken($fontClr, 30%));
