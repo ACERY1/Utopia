@@ -22,6 +22,12 @@ $userHolder: #5B5F6C;
 	align-items: center;
 }
 
+//横向盒子
+@mixin rowBox {
+	display: flex;
+	flex-flow: row;
+}
+
 // 水平垂直居中盒子
 @mixin allMidBox {
 	display: flex;

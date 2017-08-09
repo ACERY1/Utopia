@@ -23,8 +23,39 @@
 			</el-col>
 		</el-row>
 
-		<my-footer></my-footer>
 
+		<el-row type="flex" justify="center">
+			<el-col :span="18">
+				<news-dialog :type="'XL'" :info="dialogInfos[0]"></news-dialog>
+			</el-col>
+		</el-row>
+		<br>
+		<el-row type="flex" justify="center" :gutter="20">
+			<el-col :span="6">
+				<news-dialog :type="'M'" :info="dialogInfos[1]"></news-dialog>
+			</el-col>
+			<el-col :span="12">
+				<news-dialog :type="'L'" :info="dialogInfos[2]"></news-dialog>
+			</el-col>
+		</el-row>
+		<br>
+		<el-row type="flex" justify="center" :gutter="20">
+			<el-col :span="6">
+				<news-dialog :type="'L'" :info="dialogInfos[3]"></news-dialog>
+			</el-col>
+			<el-col :span="6">
+				<news-dialog :type="'L'" :info="dialogInfos[4]"></news-dialog>
+			</el-col>
+			<el-col :span="6">
+				<news-dialog :type="'L'" :info="dialogInfos[5]"></news-dialog>
+			</el-col>
+		</el-row>
+		<br>
+
+
+
+
+		<my-footer></my-footer>
 	</div>
 	</div>
 </template>
@@ -40,6 +71,7 @@
 	import smBanner from './components/swipers/smallBanner.vue'
 	import myFooter from './components/bars/footer.vue'
 	import ftDialog from './components/dialogs/footDialog.vue'
+	import newsDialog from './components/dialogs/newsDialog.vue'
 	export default {
 		name: "",
 		components: {
@@ -52,10 +84,50 @@
 			myFooter,
 			ftDialog,
 			chooseCard,
-			newsCard
+			newsCard,
+			newsDialog
 		},
 		data () {
-			return {}
+			return {
+				dialogInfos:[
+					{
+						picUrl: '../../../static/picHolder/street.jpg',
+						pubTime: +new Date(),
+						mainTitle: 'A Better Way To Design For Retina in PhotoShop',
+						cont: 'Madewith.unity.com profile and story creation is moving to Unity Connect,Madewith.unity.com profile and story creation is moving to Unity Connect',
+					},
+					{
+						picUrl: '../../../static/picHolder/p1.jpg',
+						pubTime: +new Date(),
+						mainTitle: 'A Better Way To Design For Retina in PhotoShop',
+						cont: 'Madewith.unity.com profile and story creation is moving to Unity Connect,Madewith.unity.com profile and story creation is moving to Unity Connect',
+					},
+					{
+						picUrl: '../../../static/picHolder/p2.jpg',
+						pubTime: +new Date(),
+						mainTitle: 'A Better Way To Design For Retina in PhotoShop',
+						cont: 'Madewith.unity.com profile and story creation is moving to Unity Connect,Madewith.unity.com profile and story creation is moving to Unity Connect',
+					},
+					{
+						picUrl: '../../../static/picHolder/p3.jpg',
+						pubTime: +new Date(),
+						mainTitle: 'A Better Way To Design For Retina in PhotoShop',
+						cont: 'Madewith.unity.com profile and story creation is moving to Unity Connect,Madewith.unity.com profile and story creation is moving to Unity Connect',
+					},
+					{
+						picUrl: '../../../static/picHolder/p4.jpg',
+						pubTime: +new Date(),
+						mainTitle: 'A Better Way To Design For Retina in PhotoShop',
+						cont: 'Madewith.unity.com profile and story creation is moving to Unity Connect,Madewith.unity.com profile and story creation is moving to Unity Connect',
+					},
+					{
+						picUrl: '../../../static/picHolder/p5.jpg',
+						pubTime: +new Date(),
+						mainTitle: 'A Better Way To Design For Retina in PhotoShop',
+						cont: 'Madewith.unity.com profile and story creation is moving to Unity Connect,Madewith.unity.com profile and story creation is moving to Unity Connect',
+					}
+				]
+			}
 		},
 		props: {},
 		computed: {},
