@@ -92,6 +92,7 @@
 	}
 
 	.newsCard{
+		background: $white;
 		width: 100%;
 		padding-top: 2rem;
 		&-title{
@@ -119,7 +120,7 @@
 				border-width: 0 0 1px 0;
 				color: $fontClr;
 				&-img{
-					@include wh(80%,10rem);
+					@include wh(100%,10rem);
 					overflow: hidden;
 					img{
 						height: 100%;
@@ -129,7 +130,7 @@
 				&-imgTXT{
 					background: rgba(18,18,18,.4);
 					position: absolute;
-					@include wh(80%,10rem);
+					@include wh(16.6%,10rem);
 					margin-top: -10.25rem;
 					@include allMidBox();
 					color: #ffffff;

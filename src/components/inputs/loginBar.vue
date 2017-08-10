@@ -120,6 +120,7 @@
 				margin-top: 5%;
 			}
 			&-button {
+				margin-bottom: 1.2rem;
 				margin-top: 4%;
 				width: 30%;
 				height: 4rem;

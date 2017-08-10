@@ -1,10 +1,10 @@
 <template>
 	<div class="body">
-		<!--<my-header :links="links" :activeIndex="links[0].link" ></my-header>-->
+		<my-header :links="links" :activeIndex="links[0].link" ></my-header>
 		<transition name="router-fade" mode="out-in">
 			<router-view class="App-padding"></router-view>
 		</transition>
-		<!--<my-footer></my-footer>-->
+		<my-footer></my-footer>
 	</div>
 </template>
 
@@ -20,10 +20,10 @@
 		data () {
 			return {
 				links:[
-					{name: 'HOME', link: 'home'},
-					{name: 'CATEGORY', link: 'categories'},
-					{name: 'IDEAS', link: 'test'},
-					{name: 'ADMIN', link: 'local'}
+					{name: '首页', link: 'home'},
+					{name: '分类', link: 'categories'},
+					{name: '足迹', link: 'footPrint'},
+					{name: '后台登录', link: 'admin'}
 				]
 			}
 		},
@@ -39,6 +39,6 @@
 		height: 100%;
 	}
 	.App-padding{
-		/*padding-top: 5rem;*/
+		padding-top: 5rem;
 	}
 </style>

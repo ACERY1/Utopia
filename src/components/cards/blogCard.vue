@@ -105,7 +105,7 @@
 	}
 
 	.card {
-		height: 30rem;
+		height: 32rem;
 		&-imgBox {
 			width: 100%;
 			height: 18rem;
@@ -153,7 +153,7 @@
 	}
 
 	.bgCard{
-		height: 28rem;
+		height: 32rem;
 		/*background-color: #3b3b3b;*/
 		background-size: cover!important;
 		&-main{
@@ -192,7 +192,7 @@
 	.bigCard{
 		color: $fontClr;
 		width: 100%;
-		height: 28rem;
+		height: 32rem;
 		&-img{
 			@include wh(100%,18rem);
 			background-color: #2F3137;

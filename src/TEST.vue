@@ -1,29 +1,53 @@
 <template>
-	<div  style="">
-	<div>
-		<myHeader></myHeader>
+	<div style="">
+		<h1>首页轮播图</h1>
 		<mBanner class="testBox"></mBanner>
+		<br>
+
+		<h1>首页博客Item</h1>
 		<h-card></h-card>
+		<br>
+
+		<h1>小轮播图</h1>
 		<sm-banner></sm-banner>
-		<el-row >
-			<el-col :span="18">
-				<el-col :xs="24" :sm="12" :md="6" :lg="6" v-for="(o, index) in 9" :key="o">
-					<b-card :picUrl="1" :bTitle="2" :bIntro="3" :bTime="4"></b-card>
-				</el-col>
+		<br>
+
+		<h1>分页博客Item</h1>
+		<el-row type="flex" justify="center">
+			<el-col :span="6">
+				<b-card :picUrl="1" :bTitle="2" :bIntro="3" :bTime="4"></b-card>
 			</el-col>
+		</el-row>
+		<br>
+
+		<h1>作者介绍Item</h1>
+		<el-row type="flex" justify="center">
 			<el-col :span="6">
 				<user-card></user-card>
 			</el-col>
 		</el-row>
-		<news-card></news-card>
+		<br>
+
+		<h1>侧边动态栏</h1>
+		<el-row type="flex" justify="center">
+			<el-col :span="6">
+				<news-card></news-card>
+			</el-col>
+		</el-row>
+		<br>
+
+
+		<h1>足迹栏</h1>
 		<choose-card></choose-card>
+
+		<h1>足迹Item</h1>
 		<el-row type="flex" justify="center">
 			<el-col :span="12">
 				<ft-dialog></ft-dialog>
 			</el-col>
 		</el-row>
 
-
+		<h1>海报POST</h1>
 		<el-row type="flex" justify="center">
 			<el-col :span="18">
 				<news-dialog :type="'XL'" :info="dialogInfos[0]"></news-dialog>
@@ -52,11 +76,8 @@
 		</el-row>
 		<br>
 
-
-
-
+		<h1>footer</h1>
 		<my-footer></my-footer>
-	</div>
 	</div>
 </template>
 
@@ -89,7 +110,7 @@
 		},
 		data () {
 			return {
-				dialogInfos:[
+				dialogInfos: [
 					{
 						picUrl: '../../../static/picHolder/street.jpg',
 						pubTime: +new Date(),
@@ -140,8 +161,8 @@
 </script>
 
 <style lang="scss" rel="stylesheet/scss" scoped>
-	.testBox{
-		/*box-sizing: content-box;*/
-		padding-top: 6rem;
+	h1{
+		margin: 0;
+		text-align: center;
 	}
 </style>

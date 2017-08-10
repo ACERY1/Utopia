@@ -3,14 +3,15 @@
 		<!--banner图-->
 		<m-Banner :bannerItems="bannerItems"></m-Banner>
 
+
 		<!--分割线-->
 		<dvd :words="'最近笔记'"></dvd>
 
 		<!--最近笔记-->
 		<el-row type="flex" justify="center">
-			<el-col :lg="16" :sm="24" :xs="24" :md="24">
+			<el-col :lg="16" :md="24" :sm="24" :xs="24" >
 				<el-col :lg="8" :sm="24" :xs="24" :md="24" v-for="j,index2 in 3" :key="j">
-					<b-card class="home-padding blog-card" :type="'bg'"></b-card>
+					<b-card class="home-padding blog-card" :type="'top'"></b-card>
 				</el-col>
 			</el-col>
 		</el-row>
@@ -39,6 +40,7 @@
 
 <script>
 	import userCard from '../components/cards/userCard.vue'
+	import newsCard from '../components/cards/newsCard.vue'
 	import mBanner from '../components/swipers/banner.vue'
 	import hCard from '../components/cards/homeCard.vue'
 	import bCard from  '../components/cards/blogCard.vue'
@@ -55,7 +57,8 @@
 			cCard,
 			userCard,
 			dvd,
-			smBanner
+			smBanner,
+			newsCard
 		},
 		data () {
 			return {
